@@ -1,5 +1,19 @@
 "use strict";
 
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === "inspect_element") {
+    browser.tabs.executeScript(
+        request.tabId, { code: "open_inspect_effect()" });
+  }
+  if (request.action === "qqqqqqqq2") {
+    browser.tabs.executeScript(
+        request.tabId, { code: "part_two()" });
+  }
+});
+
+
+
 // get mimetype
 var tabToMimeType = {};
 chrome.webRequest.onHeadersReceived.addListener(
