@@ -6,13 +6,6 @@ document.getElementById("inspect_element").addEventListener("click", () => {
 });
 
 
-
-
-
-
-
-
-
 /**
  Handle errors from the injected script.
  Errors may come from evaluating the JavaScript itself

@@ -9,15 +9,19 @@ function open_inspect_effect_onclickFun(e){
   e.target.style.setProperty("background", "#FF000077");
 
   browser.runtime.sendMessage({
-    action: "qqqqqqqq2"
+    action: "clickNode",
+    eventData: {
+      target: e.target.outerHTML,
+      classList: Array.from(e.target.classList),
+    }
   });
-
 }
 
-
-function part_two(){
+function part_two(a){
+  console.error("a")
+  console.error(a)
   window.onmouseover = e => ()=>{}
   window.onmouseout = e  => ()=>{}
   window.onclick = e => ()=>{}
-  console.error("part_twodddddddddddddddddd")
+  console.error("执行结束")
 }
