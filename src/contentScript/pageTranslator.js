@@ -526,6 +526,11 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
     }
   }
 
+  function hasCoustomSkipClass(node){
+   return  node.classList.contains("color-fg-muted")
+  }
+
+
   function getPiecesToTranslate(root = document.documentElement) {
     const piecesToTranslate = [
       {
@@ -558,6 +563,7 @@ Promise.all([twpConfig.onReady(), getTabHostName()]).then(function (_) {
           if (
             htmlTagsInlineIgnore.indexOf(nodeName) !== -1 ||
             isNoTranslateNode(node) ||
+            hasCoustomSkipClass(node) ||
             node.classList.contains("notranslate") ||
             node.getAttribute("translate") === "no" ||
             node.isContentEditable ||
